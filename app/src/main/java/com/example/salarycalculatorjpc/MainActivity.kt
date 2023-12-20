@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SalaryCalculatorJPCTheme {
-                // A surface container using the 'background' color from the theme
+                // колір з теми
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -29,6 +29,7 @@ class MainActivity : ComponentActivity() {
                         navController = navController,
                         startDestination = "screen1"
                     ) {
+                        // Екран 1
                         composable("screen1") {
                             Screen1 {
                                 Bundle().apply {
@@ -36,6 +37,7 @@ class MainActivity : ComponentActivity() {
                                 navController.navigate("screen2/$it")
                             }
                         }
+                        // Екран 2
                             composable(
                             "screen2/{salary}",
                             arguments = listOf(navArgument("salary") { type = NavType.FloatType })

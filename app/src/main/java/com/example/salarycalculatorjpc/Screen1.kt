@@ -123,7 +123,7 @@ fun Screen1(onSalaryCalculated: (Float) -> Unit) {
 }
 
 
-// Function to calculate salary based on input values
+// розрахунок зарплати
 private fun calculateSalary(jobType: JobType, baseSalary: Float, experience: Int, efficiency: Float?): Float {
     return when (jobType) {
         is JobType.Developer -> {
@@ -137,7 +137,6 @@ private fun calculateSalary(jobType: JobType, baseSalary: Float, experience: Int
             requireNotNull(efficiency) { "Efficiency must not be null for Designer" }
             require(efficiency in 0f..1f) { "Efficiency must be between 0 and 1 for Designer" }
 
-            // Adding the fixed amount for the specified range of experience
             val baseSalaryWithBonus = when {
                 experience > 5 -> baseSalary * 1.2f + 500
                 experience in 2..4 -> baseSalary + 200
@@ -149,7 +148,7 @@ private fun calculateSalary(jobType: JobType, baseSalary: Float, experience: Int
     }
 }
 
-// Function to check if the "Get Salary" button should be enabled
+// перевірка кнопки "Get Salary"
 private fun isCalculateButtonEnabled(jobType: JobType, baseSalary: String, experience: String, efficiency: String): Boolean {
     return when (jobType) {
         is JobType.Developer -> true
