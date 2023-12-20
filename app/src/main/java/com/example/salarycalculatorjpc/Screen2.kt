@@ -19,7 +19,7 @@ fun Screen2(salary: Double, onReturn: () -> Unit) {
     var Result by remember { mutableStateOf(true) }
 
     val imageResource = if (!Result) {
-        R.drawable.bagofmoney
+        R.drawable.moneyimg
     } else {
         0
     }
@@ -67,7 +67,7 @@ fun Screen2(salary: Double, onReturn: () -> Unit) {
                 Image(
                     painter = painterResource(imageResource),
                     contentDescription = null,
-                    modifier = Modifier.size(72.dp)
+                    modifier = Modifier.size(88.dp)
                 )
             }
         }

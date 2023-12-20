@@ -57,7 +57,6 @@ fun Screen1(onSalaryCalculated: (Float) -> Unit) {
 
         when (jobType) {
             JobType.Developer -> {
-                // No additional fields
             }
             JobType.Designer -> {
                 OutlinedTextField(
@@ -72,7 +71,6 @@ fun Screen1(onSalaryCalculated: (Float) -> Unit) {
             }
         }
 
-        // Developer option
 
         Column(
             modifier = Modifier
@@ -89,7 +87,6 @@ fun Screen1(onSalaryCalculated: (Float) -> Unit) {
                 Text("Developer")
             }
         }
-            // Designer option
 
         Column(
             modifier = Modifier
@@ -109,7 +106,6 @@ fun Screen1(onSalaryCalculated: (Float) -> Unit) {
         Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = {
-                // Perform salary calculation
                 val calculatedSalary = calculateSalary(jobType, baseSalary.toFloat(), experience.toInt(), efficiency.toFloatOrNull())
                 onSalaryCalculated(calculatedSalary)
             },

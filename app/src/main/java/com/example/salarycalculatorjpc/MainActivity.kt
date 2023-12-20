@@ -27,19 +27,19 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = "screen1"
+                        startDestination = "screen_1"
                     ) {
                         // Екран 1
-                        composable("screen1") {
+                        composable("screen_1") {
                             Screen1 {
                                 Bundle().apply {
                                     putFloat("salary", it)}
-                                navController.navigate("screen2/$it")
+                                navController.navigate("screen_2/$it")
                             }
                         }
                         // Екран 2
                             composable(
-                            "screen2/{salary}",
+                            "screen_2/{salary}",
                             arguments = listOf(navArgument("salary") { type = NavType.FloatType })
                         ) { backStackEntry ->
                             val salary = backStackEntry.arguments?.getFloat("salary") ?: 0.0f
